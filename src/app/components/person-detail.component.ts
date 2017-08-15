@@ -16,7 +16,7 @@ export class PersonDetailComponent {
         this.personForm = this.fb.group({
             name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
             mail: ['', [Validators.required, Validators.email]],
-            phone: ''
+            phone: ['', Validators.pattern(/^\d+$/)]
         });
     }
 }

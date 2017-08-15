@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import { CustomValidators } from '../shared/custom-validators';
+
 @Component({
     selector: 'app-person-detail',
     templateUrl: './person-detail.component.html'
@@ -16,7 +18,7 @@ export class PersonDetailComponent {
         this.personForm = this.fb.group({
             name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
             mail: ['', [Validators.required, Validators.email]],
-            phone: ['', Validators.pattern(/^\d+$/)]
+            phone: ['', CustomValidators.number]
         });
     }
 }

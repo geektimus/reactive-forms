@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'app-person-detail',
     templateUrl: './person-detail.component.html'
 })
 export class PersonDetailComponent {
-    name = new FormControl();
+    personForm = new FormGroup({
+        name: new FormControl(),
+        mail: new FormControl(),
+        phone: new FormControl()
+    });
 }

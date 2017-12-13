@@ -1,0 +1,18 @@
+<h2>Person Detail</h2>
+
+<form [formGroup]="personForm" novalidate>
+    <div class="form-group">
+        <label for="name" class="center-block">Name: 
+            <input name="name" class="form-control" formControlName="name">
+        </label>
+        <label for="mail" class="center-block">Mail: 
+            <input name="mail" class="form-control" formControlName="mail">
+        </label>
+        <label for="phone" class="center-block">Telephone: 
+            <input name="phone" class="form-control" formControlName="phone">
+        </label>
+    </div>
+</form>
+
+<p>Form value: {{ personForm.value | json }}</p>
+<p>Form status: {{ personForm.status | json }}</p>
